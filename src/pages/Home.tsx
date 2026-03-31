@@ -10,7 +10,7 @@ export default function Home() {
         style={{
           backgroundImage: `url(${homeHero})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top',
         }}
       >
         <div className="absolute inset-0 bg-purple-900/70" />
