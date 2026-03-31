@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import logo from '../assets/cape-coral-gems-logo.png'
 import { FACEBOOK_URL, MAPS_URL } from '../constants'
 
@@ -48,26 +47,6 @@ export default function Footer() {
               </svg>
               Facebook
             </a>
-
-            <div className="mt-4">
-              <h3 className="font-bold text-amber-400 mb-3 text-lg">Quick Links</h3>
-              <div className="flex flex-col gap-1">
-                {[
-                  { label: 'Classes', to: '/classes' },
-                  { label: 'All Star Cheerleading', to: '/all-star' },
-                  { label: 'Private Lessons', to: '/private-lessons' },
-                  { label: 'Contact Us', to: '/contact' },
-                ].map(link => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="text-gray-400 hover:text-amber-400 transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 

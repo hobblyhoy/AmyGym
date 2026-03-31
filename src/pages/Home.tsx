@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom'
+import homeHero from '../assets/homehero.webp'
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
       <div
-        className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-white text-center px-4 overflow-hidden"
+        className="relative py-24 md:py-40 text-white text-center px-4 overflow-hidden"
         style={{
-          backgroundImage: 'url(https://picsum.photos/seed/ccgems-hero/1400/800)',
+          backgroundImage: `url(${homeHero})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
         <div className="absolute inset-0 bg-purple-900/70" />
-        <div className="relative z-10 max-w-4xl mx-auto">
+        <div className="relative z-10 max-w-4xl mx-auto w-full">
           <p className="text-amber-400 font-semibold text-lg md:text-xl mb-3 tracking-widest uppercase">
             Cape Coral, FL
           </p>
