@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/cape-coral-gems-logo.png'
-import { FACEBOOK_URL } from '../constants'
+import { FACEBOOK_URL, MAPS_URL } from '../constants'
 
 export default function Footer() {
   return (
@@ -24,10 +24,15 @@ export default function Footer() {
             >
               (239) 318-5923
             </a>
-            <p className="text-gray-400 mt-2 text-sm leading-relaxed">
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-amber-400 transition-colors mt-2 text-sm leading-relaxed block"
+            >
               211 Hancock Bridge Pkwy #3<br />
               Cape Coral, FL 33990
-            </p>
+            </a>
           </div>
 
           <div className="text-center md:text-left">

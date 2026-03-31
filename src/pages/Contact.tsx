@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
-import { FACEBOOK_URL } from '../constants'
+import { FACEBOOK_URL, MAPS_URL } from '../constants'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -72,10 +72,15 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-purple-900 mb-0.5">Address</p>
-                    <p className="text-gray-600">
+                    <a
+                      href={MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-purple-700 transition-colors"
+                    >
                       211 Hancock Bridge Pkwy #3<br />
                       Cape Coral, FL 33990
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -200,7 +205,14 @@ export default function Contact() {
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm h-72 bg-purple-50 flex items-center justify-center">
             <div className="text-center">
               <div className="text-5xl mb-3">📍</div>
-              <p className="text-purple-600 font-semibold">211 Hancock Bridge Pkwy #3</p>
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-600 font-semibold hover:text-purple-400 transition-colors"
+              >
+                211 Hancock Bridge Pkwy #3
+              </a>
               <p className="text-gray-500 text-sm">Cape Coral, FL 33990</p>
             </div>
           </div>
