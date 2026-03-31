@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -rn \"title=.*$\" e:/Source/AmyGym/src/pages/)"
+    ]
+  }
+}

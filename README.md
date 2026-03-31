@@ -1,3 +1,27 @@
+# Getting Started
+
+## Start the Project Locally
+
+1. Install dependencies (if you haven't already):
+  ```sh
+  npm install
+  ```
+2. Start the development server:
+  ```sh
+  npm run dev
+  ```
+  This will launch the app locally with hot module reloading.
+
+## Deploy the Project
+
+To build and deploy the project to GitHub Pages:
+
+1. Build and deploy with:
+  ```sh
+  npm run deploy
+  ```
+  This will build the project and publish the contents of the `dist` folder to GitHub Pages.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
