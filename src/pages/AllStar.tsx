@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
 
@@ -103,25 +102,6 @@ export default function AllStar() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Interest Form CTA */}
-      <section className="bg-amber-400 py-14 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-3">
-            Interested in All Star?
-          </h2>
-          <p className="text-purple-800 text-lg mb-6">
-            Fill out our Season 2 All Star Interest Form to get started on your journey with the Cape Coral Gems!
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-purple-800 text-white font-bold px-8 py-3 rounded-full
-              hover:bg-purple-700 transition-colors text-lg shadow-lg"
-          >
-            Season 2 All Star Interest Form
-          </Link>
         </div>
       </section>
 
