@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(grep -rn \"title=.*$\" e:/Source/AmyGym/src/pages/)"
+      "Bash(grep -rn \"title=.*$\" e:/Source/AmyGym/src/pages/)",
+      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/e/2PACX-1vSksL7HLjy7oYp4PceItanpg533i6td0q5PkDA6fBCqB6BRxO-uizZMLJwO4X3uB8qapWMCihO_1QIa/pub?gid=0&single=true&output=csv\")"
     ]
   }
 }

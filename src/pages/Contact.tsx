@@ -102,6 +102,11 @@ export default function Contact() {
 
             {/* Right: Form */}
             <div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-6 text-sm text-amber-800">
+                <strong>Note:</strong> This contact form is for demonstration purposes only and does not currently send messages. We can remove it, or connect it to a service like{' '}
+                <a href="https://www.emailjs.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">EmailJS</a>
+                {' '}(~$10/month) to make it fully functional.
+              </div>
               {submitted ? (
                 <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
                   <div className="text-5xl mb-4">✅</div>
