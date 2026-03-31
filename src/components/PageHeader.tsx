@@ -3,8 +3,10 @@ interface PageHeaderProps {
   subtitle?: string
 }
 
+import sectionHero from '../assets/sectionhero.webp'
+
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
-  const bgImage = 'https://picsum.photos/seed/amygym/1400/500'
+  const bgImage = sectionHero
 
   return (
     <div
