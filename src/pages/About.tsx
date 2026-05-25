@@ -45,13 +45,35 @@ const staff = [
   },
 ]
 
+function CoachCard({ name, img, bio }: { name: string; img: string; bio: string[] }) {
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <div className="bg-white rounded-2xl border border-purple-100 shadow-sm p-6">
+      <div className="flex items-center gap-5 mb-4">
+        <img
+          src={img}
+          alt={name}
+          className="w-32 h-32 rounded-xl object-cover flex-shrink-0"
+        />
+        <h3 className="text-2xl font-bold text-purple-900">{name}</h3>
+      </div>
+      <div className={`text-gray-600 leading-relaxed text-[0.95rem] ${expanded ? '' : 'line-clamp-5'}`}>
+        {bio.map((para, i) => (
+          <p key={i} className={i > 0 ? 'mt-3' : ''}>{para}</p>
+        ))}
+      </div>
+      <button
+        onClick={() => setExpanded(prev => !prev)}
+        className="mt-3 text-amber-600 font-semibold text-sm hover:text-amber-700 transition-colors"
+      >
+        {expanded ? 'Show less' : 'Read more'}
+      </button>
+    </div>
+  )
+}
+
 export default function About() {
-  const [expanded, setExpanded] = useState<string | null>(null)
-
-  function toggle(name: string) {
-    setExpanded(prev => (prev === name ? null : name))
-  }
-
   return (
     <div>
       <PageHeader title="About Us" />
@@ -82,35 +104,9 @@ export default function About() {
             Experienced, passionate, and dedicated to your athlete's growth.
           </p>
           <div className="flex flex-col gap-5">
-            {staff.map(member => {
-              const isOpen = expanded === member.name
-              return (
-                <div
-                  key={member.name}
-                  className="bg-white rounded-2xl border border-purple-100 shadow-sm p-6"
-                >
-                  <div className="flex items-center gap-5 mb-4">
-                    <img
-                      src={member.img}
-                      alt={member.name}
-                      className="w-32 h-32 rounded-xl object-cover flex-shrink-0"
-                    />
-                    <h3 className="text-2xl font-bold text-purple-900">{member.name}</h3>
-                  </div>
-                  <div className={`text-gray-600 leading-relaxed text-[0.95rem] ${isOpen ? '' : 'line-clamp-5'}`}>
-                    {member.bio.map((para, i) => (
-                      <p key={i} className={i > 0 ? 'mt-3' : ''}>{para}</p>
-                    ))}
-                  </div>
-                  <button
-                    onClick={() => toggle(member.name)}
-                    className="mt-3 text-amber-600 font-semibold text-sm hover:text-amber-700 transition-colors"
-                  >
-                    {isOpen ? 'Show less' : 'Read more'}
-                  </button>
-                </div>
-              )
-            })}
+            {staff.map(member => (
+              <CoachCard key={member.name} {...member} />
+            ))}
           </div>
         </div>
       </section>
