@@ -57,7 +57,7 @@ export default function About() {
       <PageHeader title="About Us" />
 
       {/* Intro */}
-      <section className="bg-purple-50 py-16 md:py-24 px-4">
+      <section className="bg-white py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-16 h-1 bg-amber-400 mx-auto mb-8 rounded-full" />
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-6">
@@ -73,7 +73,7 @@ export default function About() {
       </section>
 
       {/* Staff */}
-      <section className="bg-white py-16 md:py-24 px-4">
+      <section className="bg-purple-50 py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-purple-900 mb-4">
             Meet Our Coaches
