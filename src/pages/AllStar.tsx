@@ -1,5 +1,6 @@
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
+import mostSpirited from '../assets/gym-photos/most-spirited.webp'
 
 export default function AllStar() {
   return (
@@ -41,7 +42,7 @@ export default function AllStar() {
             </div>
             <div>
               <img
-                src="https://picsum.photos/seed/ccgems-allstar-team/600/500"
+                src={mostSpirited}
                 alt="All Star Cheerleading Team"
                 className="rounded-2xl shadow-lg w-full object-cover aspect-[6/5]"
               />

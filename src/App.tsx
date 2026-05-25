@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
-import Facility from './pages/Facility'
+import Gallery from './pages/Gallery'
 import AllStar from './pages/AllStar'
 import Classes from './pages/Classes'
 import PrivateLessons from './pages/PrivateLessons'
@@ -22,7 +22,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/facility" element={<Facility />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/all-star" element={<AllStar />} />
             <Route path="/classes" element={<Classes />} />
             <Route path="/private-lessons" element={<PrivateLessons />} />

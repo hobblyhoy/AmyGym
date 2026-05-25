@@ -5,7 +5,7 @@ import logo from '../assets/cape-coral-gems-logo.png'
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
-  { label: 'Our Facility', to: '/facility' },
+  { label: 'Gallery', to: '/gallery' },
   { label: 'All Star Cheerleading', to: '/all-star' },
   { label: 'Classes', to: '/classes' },
   { label: 'Private Lessons', to: '/private-lessons' },

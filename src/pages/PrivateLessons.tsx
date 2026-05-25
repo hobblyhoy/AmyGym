@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
+import cobalt from '../assets/gym-photos/cobalt.webp'
 
 export default function PrivateLessons() {
   return (
@@ -43,7 +44,7 @@ export default function PrivateLessons() {
             </div>
             <div>
               <img
-                src="https://picsum.photos/seed/ccgems-private-lesson/600/600"
+                src={cobalt}
                 alt="Private lessons coaching"
                 className="rounded-2xl shadow-lg w-full object-cover aspect-square"
               />
