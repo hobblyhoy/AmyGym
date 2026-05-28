@@ -1,6 +1,14 @@
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
 import mostSpirited from '../assets/gym-photos/most-spirited.webp'
+import allstar1 from '../assets/allstar-images/1.jpg'
+import allstar2 from '../assets/allstar-images/2.jpg'
+import allstar3 from '../assets/allstar-images/3.jpg'
+import allstar4 from '../assets/allstar-images/4.jpg'
+import allstar5 from '../assets/allstar-images/5.jpg'
+import allstar6 from '../assets/allstar-images/6.jpg'
+
+const allstarImages = [allstar1, allstar2, allstar3, allstar4, allstar5, allstar6]
 
 export default function AllStar() {
   return (
@@ -103,6 +111,20 @@ export default function AllStar() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="bg-purple-50 py-16 md:py-24 px-4">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6">
+          {allstarImages.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`All Star Cheerleading ${i + 1}`}
+              className="w-full rounded-2xl shadow-md object-cover"
+            />
+          ))}
         </div>
       </section>
 

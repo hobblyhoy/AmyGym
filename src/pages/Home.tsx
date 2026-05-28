@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import homeHero from '../assets/homehero.webp'
+import homeHero from '../assets/home-hero.webp'
 
 export default function Home() {
   return (

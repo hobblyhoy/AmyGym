@@ -1,4 +1,4 @@
-import logo from '../assets/cape-coral-gems-logo.png'
+import logo from '../assets/shell-logo.png'
 import { FACEBOOK_URL, MAPS_URL } from '../constants'
 
 export default function Footer() {

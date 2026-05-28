@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/cape-coral-gems-logo.png'
+import logo from '../assets/shell-logo.png'
 
 const navLinks = [
   { label: 'Home', to: '/' },

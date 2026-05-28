@@ -4,6 +4,7 @@ import GetInTouch from '../components/GetInTouch'
 import coachFaith from '../assets/coach-faith.jpg'
 import coachAmy from '../assets/coach-amy.jpg'
 import coachD from '../assets/coach-d.jpg'
+import coachRemy from '../assets/coach-remy.png'
 
 const staff = [
   {
@@ -36,7 +37,7 @@ const staff = [
   },
   {
     name: 'Coach Remy',
-    img: 'https://picsum.photos/seed/coach-remy/400/400',
+    img: coachRemy,
     bio: [
       `Hi! I'm Remy! I was born and raised here, Cape Coral, Florida. I grew up in the cheer world and have been involved in competitive cheerleading for most of my life. Over the years, I cheered at Storms Field, MACS (McGregor Baptist Church), Midwest Cheer Elite, and Cape Coral High School. After high school, I also spent time participating on a college step team.`,
       `I have been coaching at Coral Gems Athletics since January 2025 and primarily work with our tumbling athletes and tumbling classes. I personally trained through Level 4 tumbling and can safely spot skills through that level. One of my favorite parts of coaching is helping athletes build confidence, improve their skills, and have fun while reaching their goals.`,
