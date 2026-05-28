@@ -3,34 +3,52 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
 
-const faqs = [
+const faqs: { question: string; answer: React.ReactNode }[] = [
   {
     question: 'Do You Require A Waiver?',
-    answer: 'Answer needs adding. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    answer: <>Yes — <strong>all athletes and party guests are required to have a signed waiver.</strong> Waivers can be completed through your <strong>Parent Portal</strong>, or you may fill out a <strong>paper copy at the gym.</strong></>,
   },
   {
     question: 'Where Are You Located?',
-    answer: 'Answer needs adding. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    answer: <>We are located at: <strong>211 Hancock Bridge Parkway, Cape Coral, FL</strong></>,
   },
   {
     question: 'What Do Classes Cost?',
-    answer: 'Answer needs adding. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    answer: <>Most classes are offered at a <strong>$25 drop-in rate</strong>. We also provide a <strong>discounted monthly punch card</strong> when you pre-pay for <strong>4 classes per month.</strong></>,
   },
   {
     question: 'What Programs Do You Offer?',
-    answer: 'Answer needs adding. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    answer: (
+      <div className="text-gray-600 leading-relaxed space-y-3">
+        <p>We offer a wide range of classes and team programs, including:</p>
+        <ul className="list-disc list-inside space-y-1 pl-2">
+          <li><strong>Cheerleading</strong></li>
+          <li><strong>Tumbling</strong></li>
+          <li><strong>Hip Hop</strong></li>
+          <li><strong>Pom</strong></li>
+          <li><strong>Baton Twirling</strong></li>
+        </ul>
+        <p>We also host fun special events such as:</p>
+        <ul className="list-disc list-inside space-y-1 pl-2">
+          <li><strong>Daddy-Daughter Stunt Clinics</strong></li>
+          <li><strong>Open Gym</strong></li>
+          <li><strong>Craft Club</strong></li>
+          <li><strong>Parent's Night Out</strong></li>
+        </ul>
+      </div>
+    ),
   },
   {
     question: 'Is There A Sibling Discount?',
-    answer: 'Answer needs adding. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    answer: <>Yes — <strong>sibling discounts are available</strong> for teams and special events.</>,
   },
   {
     question: 'Do You Offer Birthday Parties?',
-    answer: 'Answer needs adding. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    answer: <>Yes! We offer a variety of <strong>Birthday Party Packages</strong> to make your celebration unforgettable.</>,
   },
 ]
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer }: { question: string; answer: React.ReactNode }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -51,7 +69,11 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       </button>
       {open && (
         <div className="px-6 pb-6 pt-2 bg-white border-t border-purple-50">
-          <p className="text-gray-600 leading-relaxed">{answer}</p>
+          {typeof answer === 'string' ? (
+            <p className="text-gray-600 leading-relaxed">{answer}</p>
+          ) : (
+            answer
+          )}
         </div>
       )}
     </div>
