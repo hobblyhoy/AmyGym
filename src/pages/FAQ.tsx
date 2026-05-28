@@ -55,7 +55,7 @@ function FAQItem({ question, answer }: { question: string; answer: React.ReactNo
     <div className="border border-purple-100 rounded-2xl overflow-hidden shadow-sm">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-purple-50 transition-colors text-left gap-4"
+        className="w-full flex items-center justify-between px-6 py-5 bg-white hover:bg-purple-50 transition-colors text-left gap-4 cursor-pointer"
         aria-expanded={open}
       >
         <span className="font-semibold text-purple-900 text-lg">{question}</span>
