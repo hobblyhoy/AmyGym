@@ -3,21 +3,24 @@ import PageHeader from '../components/PageHeader'
 import { FACEBOOK_URL, MAPS_URL } from '../constants'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    setError(false)
+    const formData = new FormData(e.currentTarget)
+    formData.append('access_key', '43450da1-0b41-4658-a441-cc0a52b5a3e5')
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    })
+    const data = await response.json()
+    if (data.success) {
+      setSubmitted(true)
+    } else {
+      setError(true)
+    }
   }
 
   return (
@@ -107,21 +110,32 @@ export default function Contact() {
 
             {/* Right: Form */}
             <div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-6 text-sm text-amber-800">
-                <strong>Note from Nathan:</strong> This contact form is for demonstration purposes only and does not currently send messages. We can remove it, or connect it to a service like{' '}
-                <a href="https://www.emailjs.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">EmailJS</a>
-                {' '}(~$10/month) to make it fully functional.
-              </div>
               {submitted ? (
                 <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
-                  <div className="text-5xl mb-4">✅</div>
+                  <div className="flex justify-center mb-4">
+                    <svg className="w-16 h-16 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
                   <h3 className="text-2xl font-bold text-green-800 mb-2">Message Sent!</h3>
                   <p className="text-green-700">
-                    Thank you for reaching out! We'll get back to you within 24 hours.
+                    Thank you for reaching out! We'll get back to you soon!
+                  </p>
+                </div>
+              ) : error ? (
+                <div className="bg-red-50 border border-red-200 rounded-2xl p-10 text-center">
+                  <div className="text-5xl mb-4">❌</div>
+                  <h3 className="text-2xl font-bold text-red-800 mb-2">Something Went Wrong</h3>
+                  <p className="text-red-700">
+                    Sorry, it looks like we're having trouble sending your message right now. Please call us directly at{' '}
+                    <a href="tel:2393185923" className="font-semibold underline hover:text-red-500 transition-colors">
+                      (239) 318-5923
+                    </a>.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1.5">
                       Full Name <span className="text-red-500">*</span>
@@ -131,8 +145,6 @@ export default function Contact() {
                       name="name"
                       type="text"
                       required
-                      value={formData.name}
-                      onChange={handleChange}
                       placeholder="Your name"
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-gray-800 placeholder-gray-400 transition"
                     />
@@ -147,8 +159,6 @@ export default function Contact() {
                       name="email"
                       type="email"
                       required
-                      value={formData.email}
-                      onChange={handleChange}
                       placeholder="you@email.com"
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-gray-800 placeholder-gray-400 transition"
                     />
@@ -162,8 +172,6 @@ export default function Contact() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
                       placeholder="(239) 000-0000"
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-gray-800 placeholder-gray-400 transition"
                     />
@@ -178,8 +186,6 @@ export default function Contact() {
                       name="message"
                       required
                       rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
                       placeholder="Tell us how we can help..."
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-gray-800 placeholder-gray-400 transition resize-none"
                     />

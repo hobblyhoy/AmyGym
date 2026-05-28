@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden xl:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map(link => (
               <Link
                 key={link.to}
@@ -49,7 +49,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="xl:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? (
@@ -67,7 +67,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="xl:hidden bg-white border-t border-gray-100 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           {navLinks.map(link => (
             <Link
               key={link.to}

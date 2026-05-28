@@ -120,7 +120,7 @@ export default function Gallery() {
             {selectedIndex > 0 && (
               <button
                 onClick={goPrev}
-                className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
+                className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
                 aria-label="Previous image"
               >
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,7 +131,7 @@ export default function Gallery() {
             {selectedIndex < galleryImages.length - 1 && (
               <button
                 onClick={goNext}
-                className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
+                className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
                 aria-label="Next image"
               >
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@ export default function Gallery() {
             )}
 
             {/* Prev / Next buttons below image — mobile only */}
-            <div className="flex md:hidden justify-center gap-4 mt-4">
+            <div className="flex lg:hidden justify-center gap-4 mt-4">
               <button
                 onClick={goPrev}
                 disabled={selectedIndex === 0}

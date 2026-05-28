@@ -66,7 +66,7 @@ function CoachCard({ name, img, bio }: { name: string; img: string; bio: string[
       </div>
       <button
         onClick={() => setExpanded(prev => !prev)}
-        className="mt-3 text-amber-600 font-semibold text-sm hover:text-amber-700 transition-colors"
+        className="mt-3 text-amber-600 font-semibold text-sm hover:text-amber-700 transition-colors cursor-pointer"
       >
         {expanded ? 'Show less' : 'Read more'}
       </button>
