@@ -26,13 +26,25 @@ const galleryImages = [
 ]
 
 export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   const closeModal = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      setSelectedImage(null)
+      setSelectedIndex(null)
     }
   }
+
+  const goPrev = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setSelectedIndex(i => (i !== null ? i - 1 : null))
+  }
+
+  const goNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setSelectedIndex(i => (i !== null ? i + 1 : null))
+  }
+
+  const activeImage = selectedIndex !== null ? galleryImages[selectedIndex] : null
 
   return (
     <div>
@@ -57,11 +69,11 @@ export default function Gallery() {
             Our Community
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {galleryImages.map((img) => (
+            {galleryImages.map((img, index) => (
               <div
                 key={img.label}
                 className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-shadow cursor-pointer group"
-                onClick={() => setSelectedImage(img.src)}
+                onClick={() => setSelectedIndex(index)}
               >
                 <div className="relative overflow-hidden bg-gray-200 h-80">
                   <img
@@ -80,7 +92,7 @@ export default function Gallery() {
       </section>
 
       {/* Lightbox Modal */}
-      {selectedImage && (
+      {activeImage && selectedIndex !== null && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
           onClick={closeModal}
@@ -88,30 +100,47 @@ export default function Gallery() {
           <div className="relative max-w-4xl max-h-[90vh] w-full">
             {/* Close Button */}
             <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
+              onClick={() => setSelectedIndex(null)}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10 cursor-pointer"
               aria-label="Close"
             >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
+
             {/* Image */}
             <img
-              src={selectedImage}
-              alt="Enlarged gallery image"
+              src={activeImage.src}
+              alt={activeImage.label}
               className="w-full h-full object-contain rounded-lg"
             />
+
+            {/* Prev Arrow */}
+            {selectedIndex > 0 && (
+              <button
+                onClick={goPrev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
+                aria-label="Previous image"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
+
+            {/* Next Arrow */}
+            {selectedIndex < galleryImages.length - 1 && (
+              <button
+                onClick={goNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
+                aria-label="Next image"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       )}
