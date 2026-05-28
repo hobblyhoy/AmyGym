@@ -116,11 +116,11 @@ export default function Gallery() {
               className="w-full h-full object-contain rounded-lg"
             />
 
-            {/* Prev Arrow */}
+            {/* Side arrows — desktop only */}
             {selectedIndex > 0 && (
               <button
                 onClick={goPrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
+                className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
                 aria-label="Previous image"
               >
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,12 +128,10 @@ export default function Gallery() {
                 </svg>
               </button>
             )}
-
-            {/* Next Arrow */}
             {selectedIndex < galleryImages.length - 1 && (
               <button
                 onClick={goNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
+                className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white hover:text-gray-300 transition-colors p-5 cursor-pointer"
                 aria-label="Next image"
               >
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,6 +139,32 @@ export default function Gallery() {
                 </svg>
               </button>
             )}
+
+            {/* Prev / Next buttons below image — mobile only */}
+            <div className="flex md:hidden justify-center gap-4 mt-4">
+              <button
+                onClick={goPrev}
+                disabled={selectedIndex === 0}
+                className="w-16 flex items-center justify-center bg-white/20 text-white py-3 rounded-full
+                  hover:bg-white/30 transition-colors cursor-pointer disabled:opacity-0 disabled:pointer-events-none"
+                aria-label="Previous image"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={goNext}
+                disabled={selectedIndex >= galleryImages.length - 1}
+                className="w-16 flex items-center justify-center bg-white/20 text-white py-3 rounded-full
+                  hover:bg-white/30 transition-colors cursor-pointer disabled:opacity-0 disabled:pointer-events-none"
+                aria-label="Next image"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       )}
