@@ -1,4 +1,4 @@
-import logo from '../assets/shell-logo.png'
+import logo from '../assets/shell-logo-tight-small.png'
 import { FACEBOOK_URL, MAPS_URL, PHONE_NUMBER, PHONE_TEL } from '../constants'
 
 export default function Footer() {

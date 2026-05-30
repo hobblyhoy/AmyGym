@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/shell-logo.png'
+import logo from '../assets/shell-logo-tight-small.png'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -25,7 +25,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Coral Gems Athletics"
-              className="h-12 md:h-14 w-auto"
+              className="h-14 md:h-18 w-auto"
             />
           </Link>
 
