@@ -57,7 +57,7 @@ export default function Gallery() {
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             Check out our amazing teams in action! Our athletes showcase their skills,
             dedication, and passion for cheerleading. From competitions to team events,
-            these moments capture the spirit of Cape Coral Gems.
+            these moments capture the spirit of Coral Gems Athletics.
           </p>
         </div>
       </section>

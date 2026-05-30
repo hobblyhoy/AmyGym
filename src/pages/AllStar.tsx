@@ -65,7 +65,7 @@ export default function AllStar() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">The Whole Athlete</h2>
           <div className="space-y-5 text-purple-100 text-lg leading-relaxed">
             <p>
-              All of us here at the Cape Coral Gems feel that our athletes' mental health is just
+              All of us here at the Coral Gems Athletics feel that our athletes' mental health is just
               as important as their physical health. By focusing on both, our athletes will sparkle
               like true Gems!
             </p>

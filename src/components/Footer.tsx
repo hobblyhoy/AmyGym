@@ -9,10 +9,10 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <img
               src={logo}
-              alt="Cape Coral Gems Athletics"
+              alt="Coral Gems Athletics"
               className="h-16 w-auto mb-2"
             />
-            <p className="text-purple-200 text-sm mt-2">Cape Coral Gems Athletics</p>
+            <p className="text-purple-200 text-sm mt-2">Coral Gems Athletics</p>
           </div>
 
           <div className="text-center md:text-left">
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-purple-800 mt-10 pt-6 text-center text-gray-500 text-sm">
-          Copyright © 2026 Cape Coral Gems. All Rights Reserved.
+          Copyright © 2026 Coral Gems Athletics. All Rights Reserved.
         </div>
       </div>
     </footer>

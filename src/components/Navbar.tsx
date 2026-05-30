@@ -24,7 +24,7 @@ export default function Navbar() {
           <Link to="/" className="flex-shrink-0" onClick={() => setMenuOpen(false)}>
             <img
               src={logo}
-              alt="Cape Coral Gems Athletics"
+              alt="Coral Gems Athletics"
               className="h-12 md:h-14 w-auto"
             />
           </Link>

@@ -20,11 +20,11 @@ export default function Home() {
             Cape Coral, FL
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            Cape Coral Gems<br />
+            Coral Gems Athletics<br />
             <span className="text-amber-400">Cheerleading</span>
           </h1>
           <p className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Cape Coral Gems supports and elevates all athletes to be their very best. As an
+            Coral Gems Athletics supports and elevates all athletes to be their very best. As an
             all-inclusive All-Star cheerleading team in Cape Coral, we offer a safe, respectful,
             and competitive environment. Our coaches teach positive reinforcements, sportsmanship,
             and offer the best training in cheerleading and tumbling.
@@ -35,7 +35,7 @@ export default function Home() {
               className="bg-amber-400 text-purple-900 font-bold px-8 py-4 rounded-full
                 hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-lg"
             >
-              Join The Cape Coral Gems
+              Join The Coral Gems Athletics
             </Link>
             <a
               href="tel:2393185923"
@@ -103,7 +103,7 @@ export default function Home() {
             <div>
               <img
                 src={mostSpirited}
-                alt="Cape Coral Gems team"
+                alt="Coral Gems Athletics team"
                 className="rounded-2xl shadow-lg w-full object-cover aspect-[6/5]"
               />
             </div>

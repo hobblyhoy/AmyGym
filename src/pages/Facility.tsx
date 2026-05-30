@@ -25,7 +25,7 @@ export default function Facility() {
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             Our state-of-the-art facility is designed to give every athlete the best possible
             training environment. From our main practice floor to our dedicated tumbling area,
-            every inch of Cape Coral Gems is built with your athlete in mind.
+            every inch of Coral Gems Athletics is built with your athlete in mind.
           </p>
         </div>
       </section>

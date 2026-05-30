@@ -8,7 +8,7 @@ export default function GetInTouch() {
         <p className="text-purple-100 text-lg mb-8 leading-relaxed">
           Whether you're just getting started, or wanting to perfect your tumbling or cheer
           skills we have a class perfectly suited for you! Contact our office today to learn
-          more about the Cape Coral Gems Athletics!
+          more about the Coral Gems Athletics!
         </p>
         <Link
           to="/contact"
