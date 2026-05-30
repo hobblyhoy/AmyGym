@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
-import { FACEBOOK_URL, MAPS_URL } from '../constants'
+import { FACEBOOK_URL, MAPS_URL, PHONE_NUMBER, PHONE_TEL, WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '../constants'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -10,8 +10,8 @@ export default function Contact() {
     e.preventDefault()
     setError(false)
     const formData = new FormData(e.currentTarget)
-    formData.append('access_key', '43450da1-0b41-4658-a441-cc0a52b5a3e5')
-    const response = await fetch('https://api.web3forms.com/submit', {
+    formData.append('access_key', WEB3FORMS_ACCESS_KEY)
+    const response = await fetch(WEB3FORMS_ENDPOINT, {
       method: 'POST',
       body: formData,
     })
@@ -44,10 +44,10 @@ export default function Contact() {
                 All inquiries are responded to within 24 hours. For immediate assistance please
                 contact our facility directly at{' '}
                 <a
-                  href="tel:2393185923"
+                  href={PHONE_TEL}
                   className="text-purple-700 font-semibold hover:text-purple-500 transition-colors"
                 >
-                  (239) 318-5923
+                  {PHONE_NUMBER}
                 </a>.
               </p>
 
@@ -60,8 +60,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-purple-900 mb-0.5">Phone</p>
-                    <a href="tel:2393185923" className="text-gray-600 hover:text-purple-700 transition-colors">
-                      (239) 318-5923
+                    <a href={PHONE_TEL} className="text-gray-600 hover:text-purple-700 transition-colors">
+                      {PHONE_NUMBER}
                     </a>
                   </div>
                 </div>
@@ -128,8 +128,8 @@ export default function Contact() {
                   <h3 className="text-2xl font-bold text-red-800 mb-2">Something Went Wrong</h3>
                   <p className="text-red-700">
                     Sorry, it looks like we're having trouble sending your message right now. Please call us directly at{' '}
-                    <a href="tel:2393185923" className="font-semibold underline hover:text-red-500 transition-colors">
-                      (239) 318-5923
+                    <a href={PHONE_TEL} className="font-semibold underline hover:text-red-500 transition-colors">
+                      {PHONE_NUMBER}
                     </a>.
                   </p>
                 </div>

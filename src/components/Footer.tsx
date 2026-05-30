@@ -1,5 +1,5 @@
 import logo from '../assets/shell-logo.png'
-import { FACEBOOK_URL, MAPS_URL } from '../constants'
+import { FACEBOOK_URL, MAPS_URL, PHONE_NUMBER, PHONE_TEL } from '../constants'
 
 export default function Footer() {
   return (
@@ -18,10 +18,10 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="font-bold text-amber-400 mb-3 text-lg">Contact</h3>
             <a
-              href="tel:2393185923"
+              href={PHONE_TEL}
               className="block text-gray-300 hover:text-amber-400 transition-colors font-medium"
             >
-              (239) 318-5923
+              {PHONE_NUMBER}
             </a>
             <a
               href={MAPS_URL}

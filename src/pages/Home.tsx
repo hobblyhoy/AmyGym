@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import homeHero from '../assets/home-hero.webp'
 import mostSpirited from '../assets/gym-photos/most-spirited.webp'
+import { PHONE_NUMBER, PHONE_TEL } from '../constants'
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
               Join The Coral Gems Athletics
             </Link>
             <a
-              href="tel:2393185923"
+              href={PHONE_TEL}
               className="bg-white/10 border-2 border-white text-white font-bold px-8 py-4 rounded-full
                 hover:bg-white/20 active:bg-white/30 transition-colors text-lg backdrop-blur-sm"
             >
@@ -162,11 +163,11 @@ export default function Home() {
               Get In Touch
             </Link>
             <a
-              href="tel:2393185923"
+              href={PHONE_TEL}
               className="border-2 border-amber-400 text-amber-400 font-bold px-8 py-3 rounded-full
                 hover:bg-amber-400/10 transition-colors text-lg"
             >
-              (239) 318-5923
+              {PHONE_NUMBER}
             </a>
           </div>
         </div>
