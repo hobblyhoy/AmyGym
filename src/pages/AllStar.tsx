@@ -24,7 +24,7 @@ export default function AllStar() {
           <div className="text-center mb-12">
             <div className="w-16 h-1 bg-amber-400 mx-auto mb-6 rounded-full" />
             <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-4">
-              Cape Coral GEMS Cheerleading
+              Coral Gems Athletics
             </h2>
           </div>
 
@@ -65,7 +65,7 @@ export default function AllStar() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">The Whole Athlete</h2>
           <div className="space-y-5 text-purple-100 text-lg leading-relaxed">
             <p>
-              All of us here at the Coral Gems Athletics feel that our athletes' mental health is just
+              All of us here at Coral Gems Athletics feel that our athletes' mental health is just
               as important as their physical health. By focusing on both, our athletes will sparkle
               like true Gems!
             </p>

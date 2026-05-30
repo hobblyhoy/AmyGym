@@ -36,7 +36,7 @@ export default function Home() {
               className="bg-amber-400 text-purple-900 font-bold px-8 py-4 rounded-full
                 hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-lg"
             >
-              Join The Coral Gems Athletics
+              Join Coral Gems Athletics
             </Link>
             <a
               href={PHONE_TEL}
