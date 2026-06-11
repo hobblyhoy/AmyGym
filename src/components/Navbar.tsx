@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/shell-logo-tight-small.png'
+import { REGISTER_URL } from '../constants'
+import openInNew from '../assets/up-right-from-square-solid-full.svg'
 
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'All Star Cheerleading', to: '/all-star' },
-  { label: 'Classes', to: '/classes' },
+  { label: 'Schedule', to: '/schedule' },
   { label: 'Private Lessons', to: '/private-lessons' },
   { label: "FAQ's", to: '/faqs' },
   { label: 'Contact Us', to: '/contact' },
@@ -44,6 +46,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-4 py-2 text-sm font-semibold rounded-full bg-amber-400 text-white hover:bg-amber-500 transition-colors whitespace-nowrap inline-flex items-center gap-1"
+            >
+              Register
+              <img src={openInNew} alt="" className="h-3.5 w-3.5 invert" aria-hidden="true" />
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -82,6 +93,17 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <div className="px-6 py-4">
+            <a
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 w-full py-3 text-base font-semibold rounded-full bg-amber-400 text-white hover:bg-amber-500 transition-colors"
+            >
+              Register
+              <img src={openInNew} alt="" className="h-4 w-4 invert" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       )}
     </nav>

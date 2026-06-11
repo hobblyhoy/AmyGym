@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Gallery from './pages/Gallery'
 import AllStar from './pages/AllStar'
-import Classes from './pages/Classes'
+import Schedule from './pages/Schedule'
 import PrivateLessons from './pages/PrivateLessons'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
@@ -24,7 +24,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/all-star" element={<AllStar />} />
-            <Route path="/classes" element={<Classes />} />
+            <Route path="/schedule" element={<Schedule />} />
             <Route path="/private-lessons" element={<PrivateLessons />} />
             <Route path="/faqs" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />

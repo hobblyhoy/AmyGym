@@ -1,11 +1,26 @@
 import logo from '../assets/shell-logo-tight-small.png'
 import { FACEBOOK_URL, MAPS_URL, PHONE_NUMBER, PHONE_TEL } from '../constants'
+import paymentPolicy from '../assets/docs/athletes-payment-policy.pdf'
+import groupJrPolicies from '../assets/docs/default-policies-group-jr.pdf'
+import handbook from '../assets/docs/gems-handbook-26-27.pdf'
+import pricingGuide from '../assets/docs/pricing-guide-26-27.pdf'
+import tryoutForm from '../assets/docs/try-out-form.pdf'
+import usafAgeGrid from '../assets/docs/usaf-age-grid-cheer-5.19.26.pdf'
+
+const docs = [
+  { label: 'Payment Policy', href: paymentPolicy },
+  { label: 'Default Policies', href: groupJrPolicies },
+  { label: '2026-27 Handbook', href: handbook },
+  { label: '2026-27 Pricing Guide', href: pricingGuide },
+  { label: 'Tryout Form', href: tryoutForm },
+  { label: 'USAF Age Grid', href: usafAgeGrid },
+]
 
 export default function Footer() {
   return (
     <footer className="bg-purple-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="flex flex-col items-center md:items-start">
             <img
               src={logo}
@@ -32,6 +47,24 @@ export default function Footer() {
               211 Hancock Bridge Pkwy #3<br />
               Cape Coral, FL 33990
             </a>
+          </div>
+
+          <div className="text-center md:text-left">
+            <h3 className="font-bold text-amber-400 mb-3 text-lg">Forms & Docs</h3>
+            <ul className="space-y-1">
+              {docs.map(doc => (
+                <li key={doc.label}>
+                  <a
+                    href={doc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-amber-400 transition-colors text-sm"
+                  >
+                    {doc.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="text-center md:text-left">
