@@ -1,6 +1,6 @@
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
-import { FACEBOOK_URL, SCHEDULE_URL } from '../constants'
+import { SCHEDULE_URL } from '../constants'
 
 export default function Classes() {
   return (

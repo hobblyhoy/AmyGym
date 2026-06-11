@@ -68,7 +68,7 @@ function FAQItem({ question, answer }: { question: string; answer: React.ReactNo
         </span>
       </button>
       {open && (
-        <div className="px-6 pb-6 pt-2 bg-white border-t border-purple-50">
+        <div className="p-6 bg-white border-t border-purple-50">
           {typeof answer === 'string' ? (
             <p className="text-gray-600 leading-relaxed">{answer}</p>
           ) : (
