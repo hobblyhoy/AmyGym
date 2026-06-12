@@ -8,8 +8,8 @@ import tryoutForm from '../assets/docs/try-out-form.pdf'
 import usafAgeGrid from '../assets/docs/usaf-age-grid-cheer-5.19.26.pdf'
 
 const docs = [
-  { label: 'Payment Policy', href: paymentPolicy },
-  { label: 'Default Policies', href: groupJrPolicies },
+  { label: 'All-Star and Dance Team Payment Policy', href: paymentPolicy },
+  { label: 'Waivers and Releases', href: groupJrPolicies },
   { label: '2026-27 Handbook', href: handbook },
   { label: '2026-27 Pricing Guide', href: pricingGuide },
   { label: 'Tryout Form', href: tryoutForm },
