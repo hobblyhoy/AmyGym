@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import homeHero from '../assets/home-hero.webp'
 import mostSpirited from '../assets/gym-photos/most-spirited.webp'
+import lateEvaluationsSeason4 from '../assets/late-evaluations-season-4.jpeg'
 import { PHONE_NUMBER, PHONE_TEL } from '../constants'
 
 export default function Home() {
@@ -57,6 +58,34 @@ export default function Home() {
             As a local organization we take the trust our community puts in us with the utmost pride
             and will protect, teach, and guide our athletes in a way that will honor that trust.
           </p>
+        </div>
+      </section>
+
+      {/* Season 4 Late Evaluations */}
+      <section className="bg-purple-900 py-16 md:py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-amber-400 text-purple-900 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest mb-4">
+              Now Open
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Season 4 Late Evaluations
+            </h2>
+          </div>
+          <img
+            src={lateEvaluationsSeason4}
+            alt="Season 4 Late Evaluations"
+            className="w-full max-w-2xl mx-auto block rounded-2xl shadow-2xl object-cover"
+          />
+          <div className="mt-8 text-center">
+            <Link
+              to="/contact"
+              className="inline-block bg-amber-400 text-purple-900 font-bold px-8 py-4 rounded-full
+                hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-lg"
+            >
+              Sign Up Today
+            </Link>
+          </div>
         </div>
       </section>
 

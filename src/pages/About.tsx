@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import GetInTouch from '../components/GetInTouch'
-import coachFaith from '../assets/coach-faith.jpg'
-import coachAmy from '../assets/coach-amy.jpg'
-import coachD from '../assets/coach-d.jpg'
-import coachRemy from '../assets/coach-remy.png'
+import coachFaith from '../assets/about-us-emp-photos/coach-faith-2.jpg'
+import coachAmy from '../assets/about-us-emp-photos/coach-amy.jpg'
+import coachD from '../assets/about-us-emp-photos/coach-d.jpg'
+import coachRemy from '../assets/about-us-emp-photos/coach-remy-2.jpg'
 
 const staff = [
   {
