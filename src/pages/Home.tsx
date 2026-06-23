@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import homeHero from '../assets/home-hero.webp'
 import mostSpirited from '../assets/gym-photos/most-spirited.webp'
 import lateEvaluationsSeason4 from '../assets/late-evaluations-season-4.jpeg'
-import { PHONE_NUMBER, PHONE_TEL } from '../constants'
+import { PHONE_NUMBER, PHONE_TEL, REGISTER_URL } from '../constants'
 
 export default function Home() {
   return (
@@ -32,13 +32,15 @@ export default function Home() {
             and offer the best training in cheerleading and tumbling.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
+            <a
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-amber-400 text-purple-900 font-bold px-8 py-4 rounded-full
                 hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-lg"
             >
               Join Coral Gems Athletics
-            </Link>
+            </a>
             <a
               href={PHONE_TEL}
               className="bg-white/10 border-2 border-white text-white font-bold px-8 py-4 rounded-full
