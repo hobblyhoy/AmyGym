@@ -60,7 +60,7 @@ export default function Home() {
           <div className="w-16 h-1 bg-amber-400 mx-auto mb-8 rounded-full" />
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-6">
             As a local organization we take the trust our community puts in us with the utmost pride
-            and will protect, teach, and guide our athletes in a way that will honor that trust!
+            and will protect, teach, and guide our athletes in a way that will honor that trust.
           </p>
         </div>
       </section>
