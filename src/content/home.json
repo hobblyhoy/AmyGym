@@ -1,9 +1,8 @@
 {
-  "homePromo": {
+  "promo": {
     "enabled": true,
     "chipText": "Now Open",
     "heading": "Season 4 Late Evaluations",
     "image": "/uploads/late-evaluations-season-4.jpeg"
-  },
-  "scheduleUrl": "https://canva.link/coral-gems-june-schedule"
+  }
 }

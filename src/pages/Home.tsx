@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 import homeHero from '../assets/home-hero.webp'
 import mostSpirited from '../assets/gym-photos/most-spirited.webp'
 import { PHONE_NUMBER, PHONE_TEL, REGISTER_URL } from '../constants'
-import { content } from '../content'
+import { home } from '../content'
 
 export default function Home() {
-  const promo = content.homePromo
+  const promo = home.promo
 
   return (
     <div>

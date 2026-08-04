@@ -1,6 +1,7 @@
 # Pages CMS configuration — https://pagescms.org/docs/
 #
-# Editing content here commits to `master`, which triggers
+# Each `content` entry becomes its own tab in the CMS sidebar, and each owns
+# its own JSON file. Editing here commits to `master`, which triggers
 # .github/workflows/deploy.yml to rebuild and publish the site.
 
 media:
@@ -10,16 +11,16 @@ media:
   extensions: [jpg, jpeg, png, webp, gif]
 
 content:
-  - name: site
-    label: Homepage & Links
+  - name: home
+    label: Homepage
     type: file
-    path: src/content/site.json
+    path: src/content/home.json
     format: json
     fields:
-      - name: homePromo
-        label: Homepage Promotion
+      - name: promo
+        label: Promotion Section
         type: object
-        description: The purple banner section on the homepage.
+        description: The purple banner section partway down the homepage.
         fields:
           - name: enabled
             label: Show this section
@@ -43,13 +44,15 @@ content:
             type: image
             description: Upload the promotion flyer. Leave blank to show no image.
 
-      - name: scheduleUrl
+  - name: schedule
+    label: Schedule
+    type: file
+    path: src/content/schedule.json
+    format: json
+    fields:
+      - name: url
         label: Schedule link
         type: string
         description: >-
           Where the "View Schedule" button on the Schedule page goes.
           Paste the full link, e.g. https://canva.link/coral-gems-june-schedule
-
-settings:
-  content:
-    merge: true
