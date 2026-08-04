@@ -1,0 +1,41 @@
+name: Deploy site
+
+# Builds the site and publishes it to the gh-pages branch, which GitHub Pages
+# serves. Runs on every push to master — including commits made by Pages CMS —
+# so content edits go live without anyone running `npm run deploy` locally.
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Never let two deploys race; the newest push wins.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          # public/CNAME is copied into dist by Vite, so the custom domain
+          # survives each deploy.

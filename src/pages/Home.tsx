@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import homeHero from '../assets/home-hero.webp'
 import mostSpirited from '../assets/gym-photos/most-spirited.webp'
-import lateEvaluationsSeason4 from '../assets/late-evaluations-season-4.jpeg'
 import { PHONE_NUMBER, PHONE_TEL, REGISTER_URL } from '../constants'
+import { content } from '../content'
 
 export default function Home() {
+  const promo = content.homePromo
+
   return (
     <div>
       {/* Hero Section */}
@@ -63,33 +65,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Season 4 Late Evaluations */}
-      <section className="bg-purple-900 py-16 md:py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="inline-block bg-amber-400 text-purple-900 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest mb-4">
-              Now Open
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Season 4 Late Evaluations
-            </h2>
+      {/* Promotion — managed in the CMS (src/content/site.json) */}
+      {promo.enabled && (
+        <section className="bg-purple-900 py-16 md:py-24 px-4">
+          <div className="max-w-5xl mx-auto">
+            {(promo.chipText || promo.heading) && (
+              <div className="text-center mb-10">
+                {promo.chipText && (
+                  <span className="inline-block bg-amber-400 text-purple-900 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest mb-4">
+                    {promo.chipText}
+                  </span>
+                )}
+                {promo.heading && (
+                  <h2 className="text-3xl md:text-4xl font-bold text-white">
+                    {promo.heading}
+                  </h2>
+                )}
+              </div>
+            )}
+            {promo.image && (
+              <img
+                src={promo.image}
+                alt={promo.heading || 'Coral Gems Athletics promotion'}
+                className="w-full max-w-2xl mx-auto block rounded-2xl shadow-2xl object-cover"
+              />
+            )}
+            <div className="mt-8 text-center">
+              <Link
+                to="/contact"
+                className="inline-block bg-amber-400 text-purple-900 font-bold px-8 py-4 rounded-full
+                  hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-lg"
+              >
+                Sign Up Today
+              </Link>
+            </div>
           </div>
-          <img
-            src={lateEvaluationsSeason4}
-            alt="Season 4 Late Evaluations"
-            className="w-full max-w-2xl mx-auto block rounded-2xl shadow-2xl object-cover"
-          />
-          <div className="mt-8 text-center">
-            <Link
-              to="/contact"
-              className="inline-block bg-amber-400 text-purple-900 font-bold px-8 py-4 rounded-full
-                hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-lg"
-            >
-              Sign Up Today
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Feature Cards */}
       <section className="bg-purple-50 py-16 md:py-24 px-4">

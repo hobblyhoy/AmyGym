@@ -1,0 +1,55 @@
+# Pages CMS configuration — https://pagescms.org/docs/
+#
+# Editing content here commits to `master`, which triggers
+# .github/workflows/deploy.yml to rebuild and publish the site.
+
+media:
+  input: public/uploads
+  output: /uploads
+  categories: [image]
+  extensions: [jpg, jpeg, png, webp, gif]
+
+content:
+  - name: site
+    label: Homepage & Links
+    type: file
+    path: src/content/site.json
+    format: json
+    fields:
+      - name: homePromo
+        label: Homepage Promotion
+        type: object
+        description: The purple banner section on the homepage.
+        fields:
+          - name: enabled
+            label: Show this section
+            type: boolean
+            default: true
+            description: Turn off to hide the entire promotion section from the homepage.
+
+          - name: chipText
+            label: Badge text
+            type: string
+            default: Now Open
+            description: Small gold pill above the headline. Leave blank to hide the pill.
+
+          - name: heading
+            label: Headline
+            type: string
+            description: Large white heading, e.g. "Season 4 Late Evaluations".
+
+          - name: image
+            label: Flyer image
+            type: image
+            description: Upload the promotion flyer. Leave blank to show no image.
+
+      - name: scheduleUrl
+        label: Schedule link
+        type: string
+        description: >-
+          Where the "View Schedule" button on the Schedule page goes.
+          Paste the full link, e.g. https://canva.link/coral-gems-june-schedule
+
+settings:
+  content:
+    merge: true
